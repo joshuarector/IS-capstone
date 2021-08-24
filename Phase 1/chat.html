@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interest Calculator</title>  
+	<link href="https://fonts.googleapis.com/css?family=Domine|Satisfy" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.2.0-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="chat.css" rel="stylesheet">
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+  </head>
+  <!-- NAVBAR
+================================================== -->
+  <body>
+
+    <div class="navbar-wrapper">
+      <div class="container">
+        <div class="navbar navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <!--button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button-->
+              <a class="navbar-brand" href="index.html">
+              	<img src="images/jumbo_logo.jpg" alt="logo" style="width:80px;">
+              </a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Account</a></li>
+                <li><a href="interest.html">Interest Calculator</a></li>
+                <li><a href="chat.html">Chat</a></li>  
+                <li><a href="login.html">Logout</a></li>                
+              </ul> 	
+            </div>
+          </div>
+    	</div>
+      </div>
+    </div>
+<!-- END OF NAVBAR    -->
+<body>
+<div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Chat</h1>
+
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+<script>
+	function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+</body>
+</html>

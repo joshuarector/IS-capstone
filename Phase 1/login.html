@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">	
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="login.css" rel="stylesheet">
+</head>
+
+<body>
+	<form action="action_page.php">
+  <div class="imgcontainer">
+    <img src="images/jumbo_logo.jpg" alt="Logo" class="Logo">
+    <h1 >Jumbo CD Investments</h1>
+  </div>
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" href="index.html" alt="login">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="clearbtn" value="Refresh Page" onclick="window.location.reload()">Clear</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+  
+  
+  <div class="container">
+    <button onclick="myFunction()">Contact Us</button>
+    <p id="contactinfo"></p>
+    <script>
+      function myFunction() {
+        window.alert("Phone: 800-234-4605\nE-mail: help@jumbocdinvestments.com");
+        }
+    </script>
+  </div>
+  </form>
+</body>	
+</html>

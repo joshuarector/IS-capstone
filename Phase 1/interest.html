@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interest Calculator</title>  
+	<link href="https://fonts.googleapis.com/css?family=Domine|Satisfy" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-3.2.0-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="interest.css" rel="stylesheet">
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+  </head>
+  <!-- NAVBAR
+================================================== -->
+  <body>
+
+    <div class="navbar-wrapper">
+      <div class="container">
+        <div class="navbar navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <!--button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button-->
+              <a class="navbar-brand" href="index.html">
+              	<img src="images/jumbo_logo.jpg" alt="logo" style="width:80px;">
+              </a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Account</a></li>
+                <li><a href="interest.html">Interest Calculator</a></li>
+                <li><a href="chat.html">Chat</a></li>  
+                <li><a href="login.html">Logout</a></li>                
+              </ul> 	
+            </div>
+          </div>
+    	</div>
+      </div>
+    </div>
+<!-- END OF NAVBAR    -->
+<body>
+
+	<div id="outer"><h2>Interest Calculator</h2>
+		<div id=cover class="col-xs-3">
+			<form name=intt>
+				<table class=main>
+					<tr>
+						
+						<td>Principal Amount</td>
+						<td><input id=principal></td>
+					</tr>
+					<tr>
+						
+						<td>Interest Rate</td>
+						<td><input id=rate></td>
+					</tr>
+					<tr>
+						
+						<td>Interest Type</td>
+						<td><select id=itype>
+							<option value=s>Simple</option>
+							<option value=c selected>Compound</option>
+						</select>
+						</td>
+					</tr>
+					<tr>
+					
+						<td>Compounding Frequency</td>
+						<td><select id=crate>
+							<option value=12>Monthly</option>
+							<option value=4 selected>Quarterly</option>
+							<option value=2>Half-yearly</option>
+							<option value=1>Yearly</option>
+						</select>
+						</td>
+					</tr>
+					<tr>
+						
+						<td>Period (months)</td>
+						<td><input id=time></td>
+					</tr>
+					<tr>
+						
+						<td><button type=reset>Reset</button></td>
+						<td><button type=button onclick=interest()>Submit</button></td>
+					</tr>
+					<tr>
+						
+						<td>Interest Amount</td>
+						<td><input id=inttamt></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+
+	<script>
+		function interest(){
+			var principal=document.getElementById('principal').value;
+			var rate=document.getElementById('rate').value;
+			var time=document.getElementById('time').value;
+			var itype=document.getElementById('itype').value;
+			var crate=document.getElementById('crate').value;
+			var time=document.getElementById('time').value;
+			var irate=rate/crate;
+			var inttamt=document.getElementById('inttamt').value;
+			var decimal=2;
+			if( itype=='c' ){
+				document.getElementById('inttamt').value=Math.round(
+					(document.getElementById('principal').value * Math.pow(
+						(1+irate/100),(time/12*crate))*1-principal*1 ) *100)/100;
+			}
+			if(itype=='s' ){
+				document.getElementById('inttamt').value=Math.round
+				(((document.getElementById('principal').value * rate * time/12)/100)*100)/100;
+			}
+		}
+	</script>
+</body>
+</html>
